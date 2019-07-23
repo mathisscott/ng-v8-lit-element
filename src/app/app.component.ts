@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-v8-lit-element';
+  showDropdown = true;
+  backgroundColor = 'green';
+  textColor = 'blue';
+
+  toggleBackgroundColor() {
+    this.backgroundColor = this.backgroundColor === 'purple' ? 'green' : 'purple';
+    (window as any).ShadyCSS.styleDocument({'--global-dropdown-color' : this.backgroundColor});
+  }
+
+  toggleTextColor() {
+    this.textColor = this.textColor === 'blue' ? 'black' : 'blue';
+    (window as any).ShadyCSS.styleSubtree(document.querySelector('x-dropdown'), {'--dropdown-text-color' : this.textColor});
+  }
 }
