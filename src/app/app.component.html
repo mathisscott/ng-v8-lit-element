@@ -1,16 +1,16 @@
 <h1>Test Root Vars...</h1>
 
-<div>
-  <h3>
-    Lit element component below:
-  </h3>
-  <my-wc-component message="My first component"></my-wc-component>
+<button (click)="toggleTheme()">toggle theme</button>
 
-  <x-dropdown *ngIf="showDropdown" title="click me!">
-    hello world...
-  </x-dropdown>
+<br><br>
 
-  <button (click)="showDropdown = !showDropdown">Show Dropdown</button>
-  <button (click)="toggleBackgroundColor()">toggle dropdown button background color (global property)</button>
-  <button (click)="toggleTextColor()">toggle dropdown button text color (component property)</button>
-</div>
+
+<x-dropdown *ngIf="showDropdown" title="click me!">
+  hello world...
+</x-dropdown>
+
+<br><br>
+
+<button (click)="showDropdown = !showDropdown">Show Dropdown</button>
+<button (click)="toggleTextColor()">toggle dropdown button text color (component property)</button>
+

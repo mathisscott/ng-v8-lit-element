@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --heading-color: orange;
+  --root-color: #2d2d2d;
+  --root-background-color: #fff;
 }
 
-h1 {
-  color: var(--heading-color);
+body {
+  color: var(--root-color);
+  background-color: var(--root-background-color);
 }

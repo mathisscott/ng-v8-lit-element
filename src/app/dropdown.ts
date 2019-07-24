@@ -2,7 +2,6 @@ import { LitElement, html, css, property } from 'lit-element';
 
 export const styles = css`
   :host {
-    --dropdown-text-color: orange;
     font-family: inherit;
     font-size: inherit;
     color: inherit;
@@ -16,8 +15,8 @@ export const styles = css`
   }
 
   .dropdown .btn {
-    background-color: var(--global-dropdown-color, #2d2d2d);
-    color: var(--dropdown-text-color);
+    background-color: var(--dropdown-background-color, #ccc);
+    color: var(--dropdown-color, #2d2d2d);
     padding: 12px;
     font-family: inherit;
     font-size: 36px;
