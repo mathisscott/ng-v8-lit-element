@@ -2,15 +2,41 @@
 
 <button (click)="toggleTheme()">toggle theme</button>
 
-<br><br>
-
+<br /><br />
 
 <x-dropdown *ngIf="showDropdown" title="click me!">
   hello world...
 </x-dropdown>
 
-<br><br>
+<br /><br />
 
 <button (click)="showDropdown = !showDropdown">Show Dropdown</button>
-<button (click)="toggleTextColor()">toggle dropdown button text color (component property)</button>
+<button (click)="toggleTextColor()">
+  toggle dropdown button text color (component property)
+</button>
 
+<br /><br />
+
+<div>
+  <cds-icon size="xl" status="success"></cds-icon>
+</div>
+
+<br /><br />
+
+<div>
+  <cds-progress-circle size="xxl"></cds-progress-circle>
+</div>
+
+<br /><br />
+
+<div>
+  <cds-progress-circle size="xxl" value="33"
+    ><cds-icon shape="unknown"></cds-icon
+  ></cds-progress-circle>
+</div>
+
+<br /><br />
+
+<div>
+  <cds-progress-circle [value]="circleValue" size="xl"></cds-progress-circle>
+</div>

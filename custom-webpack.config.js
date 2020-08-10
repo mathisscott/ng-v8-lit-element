@@ -1,35 +1,37 @@
-const webpack = require('webpack');
-const pkg = require('./package.json');
-const path = require('path');
+const webpack = require("webpack");
+const pkg = require("./package.json");
+const path = require("path");
 
 module.exports = (config, options) => {
   /**
-   * We need to add a rule to compile the lit-element module (which is 
+   * We need to add a rule to compile the lit-element module (which is
    * shipped in es6 format) to es5
    */
   config.module.rules.push({
     test: /\.js$/,
     include: [
-      path.resolve(__dirname, 'node_modules/lit-element'),
-      path.resolve(__dirname, 'node_modules/lit-html')
+      path.resolve(__dirname, "node_modules/lit-element"),
+      path.resolve(__dirname, "node_modules/lit-html"),
+      path.resolve(__dirname, "node_modules/@clr/core"),
     ],
     use: {
-      loader: 'babel-loader',
+      loader: "babel-loader",
       options: {
-        presets: ['@babel/preset-env'],
+        presets: ["@babel/preset-env"],
         plugins: [
+          "@babel/plugin-transform-spread",
           [
-            '@babel/plugin-transform-runtime',
+            "@babel/plugin-transform-runtime",
             {
-              "corejs": false,
-              "helpers": false,
-              "regenerator": true,
-              "useESModules": false
-            }
-          ]
-        ]
-      }
-    }
+              corejs: 3,
+              helpers: false,
+              regenerator: true,
+              useESModules: false,
+            },
+          ],
+        ],
+      },
+    },
   });
   return config;
 };
