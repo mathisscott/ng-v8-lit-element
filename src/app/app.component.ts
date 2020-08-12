@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 import "@clr/core/icon/register.js";
 import "@clr/core/progress-circle/register.js";
+import "@clr/core/alert/register.js";
+import "@clr/core/button/register.js";
 
 // This code would ideally be loaded in main.ts before everything else
 // For demonstration it is here with the rest of the theming logic
